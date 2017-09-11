@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE board [
+<!ELEMENT board (name,article+)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT article (Wtitle, Wmessage,WID,Wname,Wreply*)>
+<!ELEMENT Wtitle (#PCDATA)>
+<!ELEMENT Wmessage (#PCDATA)>
+<!ELEMENT WID (#PCDATA)>
+<!ELEMENT Wname (#PCDATA)>
+<!ELEMENT reply (Rmessage, RID, Rname)>
+<!ELEMENT Rmesage (#PCDATA)>
+<!ELEMENT RID (#PCDATA)>
+<!ELEMENT Rname (#PCDATA)>
+]>

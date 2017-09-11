@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE board SYSTEM "bulletin.dtd">
+<board>
+<name></name>
+<article>
+<titcle></titcle>
+<message></message>
+<ID></ID>
+<name></name>
+<reply>
+<message></message>
+<ID></ID>
+<name></name>
+</reply>
+</article>
+</board>
