@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/newspaper" xmlns:tns="http://www.example.org/newspaper" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:element name="NEWSPAPER">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ARTICLE" maxOccurs="unbounded"
+					minOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="HEADLINE" type="xs:string" />
+							<xs:element name="BYLINE" type="xs:string" />
+							<xs:element name="LEAD" type="xs:string" />
+							<xs:element name="BODY" type="xs:string" />
+							<xs:element name="NOTES" type="xs:string" />
+						</xs:sequence>
+						<xs:attribute name="AUTHOR" type="xs:string" use="required" />
+						<xs:attribute name="EDITOR" type="xs:string" />
+						<xs:attribute name="DATE" type="xs:string" />
+						<xs:attribute name="EDITION" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
 
-
-
-</schema>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

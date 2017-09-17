@@ -1,1 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<NEWSPAPER xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="newspaper.xsd">
+	
+	<ARTICLE AUTHOR="author1" EDITOR="editor1" DATE="date1" EDITION="edition1">
+		<HEADLINE>headline1</HEADLINE>
+		<BYLINE>byline1</BYLINE>
+		<LEAD>lead1</LEAD>
+		<BODY>body1</BODY>
+		<NOTES>notes1</NOTES>
+	</ARTICLE>
+
+	<ARTICLE AUTHOR="author2">
+		<HEADLINE>headline2</HEADLINE>
+		<BYLINE>byline2</BYLINE>
+		<LEAD>lead2</LEAD>
+		<BODY>body2</BODY>
+		<NOTES>notes2</NOTES>
+	</ARTICLE>
+</NEWSPAPER>
