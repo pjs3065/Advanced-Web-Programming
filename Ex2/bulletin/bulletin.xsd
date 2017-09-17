@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:element name="BOARD">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="NAME" type="xs:string" />
+				<xs:element name="ARTICLE" maxOccurs="unbounded"
+					minOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TITLE" type="xs:string" />
+							<xs:element name="MESSAGE" type="xs:string" />
+							<xs:element name="WRITERID" type="xs:string" />
+							<xs:element name="WRITERNAME" type="xs:string" />
+							<xs:element name="REPLIES" maxOccurs="unbounded"
+								minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="RMESSAGE" type="xs:string" />
+										<xs:element name="RWRITERID" type="xs:string" />
+										<xs:element name="RWRITERNAME" type="xs:string" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
