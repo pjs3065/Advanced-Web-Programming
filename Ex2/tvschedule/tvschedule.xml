@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TVSCHEDULE NAME="MBC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="tvschedule.xsd">
+	<CHANNEL CHAN="11">
+		<BANNER>banner1</BANNER>
+		<DAY>
+			<DATE>Monday</DATE>
+			<HOLYDAY>YES</HOLYDAY>
+		</DAY>
+	</CHANNEL>
+	
+	<CHANNEL CHAN="11">
+		<BANNER>banner2</BANNER>
+		<DAY>
+			<DATE>Monday</DATE>
+			<PROGRAMSLOT VTR="VTR1">
+				<TIME>7:00</TIME>
+				<TITLE RATING="33">7am News</TITLE>
+				<DESCRIPTION>Morning news1</DESCRIPTION>
+			</PROGRAMSLOT>
+			
+			<PROGRAMSLOT VTR="VTR2">
+				<TIME>8:00</TIME>
+				<TITLE LANGUAGE="KOREA">8am News</TITLE>
+				<DESCRIPTION>Morning news2</DESCRIPTION>
+			</PROGRAMSLOT>
+		</DAY>
+	</CHANNEL>
+</TVSCHEDULE>

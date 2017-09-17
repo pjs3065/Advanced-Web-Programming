@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<xs:element name="TVSCHEDULE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CHANNEL" maxOccurs="unbounded"
+					minOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="BANNER" type="xs:string" />
+							<xs:element name="DAY" maxOccurs="unbounded"
+								minOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DATE" type="xs:string" />
+										<xs:choice>
+											<xs:element name="HOLYDAY" type="xs:string"
+												maxOccurs="unbounded" minOccurs="1" />
+											<xs:element name="PROGRAMSLOT" maxOccurs="unbounded"
+												minOccurs="1">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="TIME" type="xs:string" />
+														<xs:element name="TITLE">
+															<xs:complexType>
+																<xs:simpleContent>
+																	<xs:extension base="xs:string">
+																		<xs:attribute name="RATING" type="xs:string" />
+																		<xs:attribute name="LANGUAGE" type="xs:string" />
+																	</xs:extension>
+																</xs:simpleContent>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="DESCRIPTION" type="xs:string"
+															maxOccurs="1" minOccurs="0" />
+													</xs:sequence>
+													<xs:attribute name="VTR" type="xs:string" />
+												</xs:complexType>
+											</xs:element>
+										</xs:choice>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="CHAN" type="xs:string" use="required" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="NAME" type="xs:string" use="required" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
