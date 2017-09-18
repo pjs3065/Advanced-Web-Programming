@@ -21,7 +21,9 @@
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
-
 		</xs:complexType>
 	</xs:element>
+	<xs:element name= "NEWSPAPERS" type = "xs:string" fixed="Vervet Logic Times"/>
+	<xs:element name= "PUBLISHER" type = "xs:string" fixed="Vervet Logic Press"/>
+	<xs:element name= "COPYRIGHT" type = "xs:string" fixed="Copyright 1998 Vervet Logic Press"/>
 </xs:schema>
