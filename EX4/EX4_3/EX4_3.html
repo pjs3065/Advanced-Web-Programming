@@ -5,27 +5,93 @@
 <title>Insert title here</title>
 <script src="jquery-3.2.1.min.js"></script>
 <script>
+	$(document).ready(function() {
+		//인터넷 익스플로러
+		$("#explorer").mouseenter(function() {
+			$("#explorer").animate({
+				left : '250px',
+				height : '+=50px',
+				width : '+=50px'
+			});
+		});
+		$("#explorer").mouseleave(function() {
+			$("#explorer").animate({
+				left : '250px',
+				height : '150px',
+				width : '150px'
+			});
+		});
+		$("#explorer").click(function() {
+			$("#header").text("My favorite web browser: explorer");
+		});
 
-$(document).ready(function() {
-	$("#chrome").mouseenter(function() {
-		$("#chrome").animate({ left: '250px', opacity: '0.5', height: '+=150px', width: '+=150px' });
+		//크롬
+		$("#chrome").mouseenter(function() {
+			$("#chrome").animate({
+				left : '250px',
+				height : '+=50px',
+				width : '+=50px'
+			});
+		});
+		$("#chrome").mouseleave(function() {
+			$("#chrome").animate({
+				left : '250px',
+				height : '150px',
+				width : '150px'
+			});
+		});
+		$("#chrome").click(function() {
+			$("#header").text("My favorite web browser: chrome");
+		});
+
+		//파이어폭스
+		$("#firefox").mouseenter(function() {
+			$("#firefox").animate({
+				left : '250px',
+				height : '+=50px',
+				width : '+=50px'
+			});
+		});
+		$("#firefox").mouseleave(function() {
+			$("#firefox").animate({
+				left : '250px',
+				height : '150px',
+				width : '150px'
+			});
+		});
+		$("#firefox").click(function() {
+			$("#header").text("My favorite web browser: firefox");
+		});
+
+		//사파리
+		$("#safari").mouseenter(function() {
+			$("#safari").animate({
+				left : '250px',
+				height : '+=50px',
+				width : '+=50px'
+			});
+		});
+		$("#safari").mouseleave(function() {
+			$("#safari").animate({
+				left : '250px',
+				height : '150px',
+				width : '150px'
+			});
+		});
+		$("#safari").click(function() {
+			$("#header").text("My favorite web browser: safari");
+		});
+
 	});
-	
-	$("#chrome").mouseleave(function() {
-		$("#chrome").animate({ left: '250px', opacity: '0.5', height: '-=150px', width: '-=150px' });
-	});
-
-
 </script>
 </head>
 <body>
-
-	<h1 id="header"></h1>
-	<img id="explorer" src="explorer.png" alt="explorer" height="100"
-		width="100">
-	<img id="chrome" src="chrome.png" alt="chrome" height=100 " width="100">
-	<img id="firefox" src="firefox.png" alt="firefox" height="100"
-		width="100">
-	<img id="safari" src="safari.png" alt="safari" height="100" width="100">
+	<h1 id="header">My favorite web browser: none</h1>
+	<img id="explorer" src="explorer.png" alt="explorer" height="150"
+		width="150"></img>
+	<img id="chrome" src="chrome.png" alt="chrome" height="150" width="150"></img>
+	<img id="firefox" src="firefox.png" alt="firefox" height="150"
+		width="150"></img>
+	<img id="safari" src="safari.png" alt="safari" height="150" width="150"></img>
 </body>
 </html>
