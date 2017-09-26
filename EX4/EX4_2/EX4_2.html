@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#btn1").click(function() {
+			$("#header1").css("color", $("#color").val());
+		});
+		$("#btn2").click(function() {
+			$("#header2").css("color", $("#color").val());
+		});
+
+		$("#btn3").click(function() {
+			$("#header3").css("color", $("#color").val());
+		});
+	});
+</script>
+</head>
+<body>
+
+	<h1 id="header1">Header 1</h1>
+	<h1 id="header2">Header 2</h1>
+	<h1 id="header3">Header 3</h1>
+
+	<br> Choose the header color:
+	<input type="color" id="color" name="favcolor">
+	<br>
+
+	<br>
+	<button id="btn1">Change1</button>
+	<button id="btn2">Change2</button>
+	<button id="btn3">Change3</button>
+
+</body>
+</html>

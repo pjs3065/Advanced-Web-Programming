@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$("#chrome").mouseenter(function() {
+			$("#header").text("Your choice: Chrome");
+		});
+		
+		$("#chrome").mouseleave(function() {
+			$("#header").text("Which is the web browser you prefer?");
+		});
+		
+		$("#ie").mouseenter(function() {
+			$("#header").text("Your choice: Internet Explorer");
+		});
+		
+		$("#ie").mouseleave(function() {
+			$("#header").text("Which is the web browser you prefer?");
+		});
+
+		$("#safari").mouseenter(function() {
+			$("#header").text("Your choice: Safari");
+		});
+		
+		$("#safari").mouseleave(function() {
+			$("#header").text("Which is the web browser you prefer?");
+		});
+	});
+</script>
+</head>
+<body>
+
+	<h1 id="header">Which is the web browser you prefer?</h1>
+	<p id="chrome">(a) Chrome</p>
+	<p id="ie">(b) Internet Explorer</p>
+	<p id=safari>(c) Safari</p>
+
+</body>
+</html>
