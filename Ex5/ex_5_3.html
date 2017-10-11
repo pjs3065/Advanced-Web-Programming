@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script>
+	function search() {
+		<!-- 연결하기위해서 -->
+		var xmlhttp = new XMLHttpRequest();
+		
+		<!-- text 상자의 select 숫자 받아오기 -->
+		var field = parseInt(document.getElementById("field").value);
+
+		<!-- 잘 받아왔는지 체크와 JSON 파싱하기 -->
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				var jsonDoc = xmlhttp.responseText;
+				var obj = JSON.parse(jsonDoc)
+				find(obj);
+			}
+		}
+
+		<!-- 서버에 있는 json 파일을 이용하겠다 -->
+		xmlhttp.open("GET", "cd_catalog.json", true);
+		xmlhttp.send();
+
+		<!-- json 파일에서 값 찾기 -->
+		function find(obj)
+		{
+			var index = [ "TITLE", "ARTIST", "COUNTRY", "COMPANY", "PRICE", "YEAR" ];
+			var option = index[field];
+			var html = '<p><table border = "1">\n';
+			html = html + '<tr><th>' + index[field] + '<tr><th>\n';
+			
+			<!-- CATALOG안 CD의 갯수만큼을 분석해서 찾을 것이다 -->
+			for(var i = 0; i < obj.CATALOG.CD.length; i++)
+				{
+				<!-- 바로 바로 테이블에 해당 인덱스 번호의 값들을 넣어주기 -->
+					html = html + '<tr><td>' + obj.CATALOG.CD[i][option] + '</td></tr>\n';
+				}
+			html = html + '</table>\n';
+			document.getElementById("show").innerHTML = html;
+		}
+	}
+</script>
+
+</head>
+<body>
+	<h1>Select a Field to Show</h1>
+	
+	<!--  value값을 숫자로 지정해주고  -->
+	<select id = "field">
+		<option value="0">TITLE</option>
+		<option value="1">ARTIST</option>
+		<option value="2">COUNTRY</option>
+		<option value="3">COMPANY</option>
+		<option value="4">PRICE</option>
+		<option value="5">YEAR</option>
+	</select>
+	
+	<!--  버튼을 클릭할시 -->
+	<button type="button" id="search" onclick="search()">Show Values</button>
+	<p><div id="div1">CD Information: <p id="show"></p>
+
+</body>
+</html>

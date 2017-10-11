@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script>
+	function search() {
+		<!-- 연결하기위해서 -->
+		var xmlhttp = new XMLHttpRequest();
+		
+		<!-- text 상자의 데이터 받아오기 -->
+		var artist = document.getElementById("artist").value;
+
+		<!-- 잘 받아왔는지 체크와 CD 엘리먼트의 어레이 가져오기 -->
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				var xmlDoc = xmlhttp.responseXML;
+				var arr = xmlDoc.getElementsByTagName("CD");
+				find(arr);
+			}
+		}
+
+		<!-- 서버에 있는 xml 파일을 이용하겠다 -->
+		xmlhttp.open("GET", "cd_catalog.xml", true);
+		xmlhttp.send();
+
+		<!-- xml 파일에서 값 찾기 -->
+		function find(arr) {
+			var index = [ "TITLE", "ARTIST", "COUNTRY", "COMPANY", "PRICE", "YEAR" ];
+			
+			<!-- CD값 만큼 어레이가 존재 , 그 어레이 안의 자식 노드 만큼 엘리먼트들이 존재 하기에 이차배열 사용 -->
+			for (var i = 0; i < arr.length; i++) {
+				var cd_table = [];
+				for (var j = 0; j < arr[i].childNodes.length; j++) {
+					<!-- 그 해당 자식 노드들의 타입이 엘리먼트와 텍스트 노드이면  -->
+					if(arr[i].childNodes[j].nodeType == Node.ELEMENT_NODE)
+						{
+						<!-- cd_table 어레이 안에 push 해준다 -->
+						cd_table.push(arr[i].childNodes[j].childNodes[0].nodeValue);
+						}
+				}
+				
+				<!-- cd_table의 값이 입력한 값과 같다면 -->
+				if(cd_table[1] == artist)
+					{
+						var html = "";
+						html = '<p><table border ="1">\n';
+						
+						<!-- table의 엘리먼트들을 다 나타내야하기에 -->
+						for(var k = 0; k < cd_table.length; k++)
+							{
+								html = html + '<tr><th>' + index[k] + '</th><td>' + cd_table[k] + '</td></tr>\n';
+							}
+						html = html + '</table>\n';
+						
+						<!-- show에 html 값을 넣어서 표시해준다 -->
+						document.getElementById("show").innerHTML = html;
+						return;
+					}
+			}
+			
+			<!-- 만약에 아무것도 찾지 못하고 나왔다면 -->
+			document.getElementById("show").innerHTML = "none";
+		}
+	}
+</script>
+
+</head>
+<body>
+	<h1>Enter Artist Name:</h1>
+	<input type="text" id="artist" />
+	<button type="button" id="search" onclick="search()">Search</button>
+	<p><div id="div1">CD Information: <p id="show"></p>
+	</div>
+</body>
+</html>
