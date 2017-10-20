@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+
+<!-- xml 파일 가져오기 -->
+	function loadXMLDoc(filename) {
+		xhttp = new XMLHttpRequest();
+		xhttp.open("GET", filename, false);
+		xhttp.send();
+		return xhttp.responseXML;
+	}
+
+	<!-- books xml -->
+	root = loadXMLDoc("books.xml");
+	book_list_arr = root.getElementsByTagName("book");
+
+	//테이블 생성
+	document.write("<table border='1'> <tr> <th>Book</th> <th>Title</th> <th>Authors</th> <th>Year</th> </tr>");
+	
+	//책 제목
+	for (var i = 0; i < book_list_arr.length; i++) {
+		document.write("<tr>");
+		document.write("<td>" + i + "</td>");
+		//타이틀
+		document.write("<td>"
+						+ book_list_arr[i].getElementsByTagName("title")[0].childNodes[0].nodeValue
+						+ "</td>");
+		//저자
+		author_arr = book_list_arr[i].getElementsByTagName("author");
+		document.write("<td>");
+		
+		//저자의 수 만큼
+		for (var k = 0; k < author_arr.length; k++) {
+			document.write(author_arr[k].childNodes[0].nodeValue + "<br>");
+		}
+		
+		document.write("</td>");
+		document.write("<td>"
+						+ book_list_arr[i].getElementsByTagName("year")[0].childNodes[0].nodeValue
+						+ "</td>");
+		document.write("</tr>");
+	}
+	document.write("</table> <br><br><br>");
+	//테이블 끝
+
+	<!-- cd_catalog.xml -->
+	root = loadXMLDoc("cd_catalog.xml");
+	cd_arr = root.getElementsByTagName("CD");
+	
+	//인덱스 값
+	var index = 0;
+
+	//테이블 시작
+	document.write("<table border='1'> <tr> <th>CD</th> <th>Title</th> <th>Artist</th> <th>Year</th> </tr>");
+
+	//타이틀, 아티스트, 년
+	for (var i = 0; i < cd_arr.length; i++) {
+		year = cd_arr[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue;
+		
+		//1990년도 이상이면
+		if (year >= 1990) {
+			document.write("<tr>");
+			document.write("<td>" + index + "</td>");
+			document.write("<td>"
+							+ cd_arr[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue
+							+ "</td>");
+			document.write("<td>"
+							+ cd_arr[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue
+							+ "</td>");
+			document.write("<td>" + year + "</td>");
+			index += 1;
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+	//테이블
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

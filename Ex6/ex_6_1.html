@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script>
+
+<!-- 첫번째 차일드 -->
+function firstChild(node)
+{
+	var child_arr = node.childNodes;
+	
+	if(child_arr)
+	{
+		for(var i=0; i<child_arr.length; i++)
+		{
+			if(child_arr[i].nodeType == 1)
+				return child_arr[i];
+		}
+	}
+	return null;
+}
+
+<!-- 첫번째 차일드 확장판 -->
+function firstChild_extend(node)
+{
+	var child_arr = node.childNodes;
+	
+	if(child_arr)
+	{
+		for(var i=0; i<child_arr.length; i++)
+		{
+			<!-- 텍스트 타입 이고, 화이트 스페이스 일경우 그냥 넘김 -->
+			if(child_arr[i].nodeType == 3 && child_arr[i].nodeValue.trim() == "")
+				continue;
+			else
+				return child_arr[i];
+		}
+	}
+	return null;
+}
+
+<!-- 마지막 차일드 -->
+function lastChild(node)
+{
+	var child_arr = node.childNodes;
+	
+	if(child_arr)
+	{
+		for(var i=child_arr.length - 1; i>=0; i--)
+		{
+			if(child_arr[i].nodeType == 1)
+				return child_arr[i];
+		}
+	}
+	return null;
+}
+
+<!-- 마지막 차일드 확장판 -->
+function lastChild_extend(node)
+{
+	var child_arr = node.childNodes;
+	
+	if(child_arr)
+	{
+		for(var i=child_arr.length - 1; i>=0; i--)
+		{
+			if(child_arr[i].nodeType == 3 && child_arr[i].nodeValue.trim() == "")
+				continue;
+			else
+				return child_arr[i];
+		}
+	}
+	return null;
+}
+
+<!-- 다음 차일드로 넘기기 -->
+function nextSibling(node)
+{
+	if(node)
+	{
+		parent = node.parentNode;
+		childs = parent.childNodes;
+		for(var i=0; i<childs.length - 1; i++)
+		{
+			if(node == childs[i])
+			{
+				for(var k=i+1; k<childs.length; k++)
+				{
+					if(childs[k].nodeType == 1)
+						return childs[k];
+				}
+				break;
+			}
+		}
+	}
+	return null;
+}
+
+<!-- 다음 차일드로 넘기기 확장판 -->
+function nextSibling_extend(node)
+{
+	if(node)
+	{
+		parent = node.parentNode;
+		childs = parent.childNodes;
+		for(var i=0; i<childs.length - 1; i++)
+		{
+			if(node == childs[i])
+			{
+				for(var k = i + 1; k < childs.length; k++)
+				{
+					if(childs[k].nodeType == 3 && childs[k].nodeValue.trim() == "")
+						continue;
+					else
+						return childs[k];
+				}
+				break;
+			}
+		}
+	}
+	return null;
+}
+
+<!-- 이전 차일드로 넘기기-->
+function prevSibling(node)
+{
+	if(node)
+	{
+		parent = node.parentNode;
+		childs = parent.childNodes;
+		for(var i = childs.length - 1; i>0; i--)
+		{
+			if(node == childs[i])
+			{
+				for(var k = i-1; k >= 0; k--)
+				{
+					if(childs[k].nodeType == 1)
+						return childs[k];
+				}
+				break;
+			}
+		}
+	}
+	return null;
+}
+
+<!-- 이전 차일드로 넘기기 확장판 -->
+function prevSibling_extend(node)
+{	
+	if(node)
+	{
+		parent = node.parentNode;
+		childs = parent.childNodes;
+		for(var i=childs.length - 1; i>0; i--)
+		{
+			if(node == childs[i])
+			{
+				for(var k = i-1; k >= 0; k--)
+				{
+					if(childs[k].nodeType == 3 && childs[k].nodeValue.trim() == "")
+						continue;
+					else
+						return childs[k];
+				}
+				break;
+			}
+		}
+	}
+	return null;
+}
+
+<!-- 차일드 노드 -->
+function childNodes(node)
+{
+	if(node)
+	{
+		var element = firstChild(node);
+		if (element == null)
+			return null;
+		
+		var child_arr = [element];
+		
+		while(true)
+		{
+			element = nextSibling(element);
+			if(element == null)
+				break;
+			child_arr.push(element);
+		}
+		return child_arr;
+	}
+	return null;
+}
+
+<!-- xml 파일 받아오기 -->
+function loadXMLDoc(filename)
+{
+	xhttp = new XMLHttpRequest();
+	xhttp.open("GET", filename, false);
+	xhttp.send();
+	return xhttp.responseXML;
+}
+
+root = loadXMLDoc("books.xml").childNodes[0];  // bookstore
+
+/* Exercise 6-1
+first = firstChild(root);	// first book
+last = lastChild(root);		// last book
+next = nextSibling(first);	// second book
+prev = prevSibling(last);	// last before book
+*/
+
+//Exercise 6-2
+debug = root;
+firstc = firstChild_extend(root);
+lastc = lastChild_extend(root);
+nexts = nextSibling_extend(firstc);
+prevs = prevSibling_extend(lastc);
+
+document.write(firstc.nodeName+"<br>");
+document.write(lastc.nodeName+"<br>");
+document.write(nexts.nodeName+"<br>");
+document.write(prevs.nodeName+"<br>");
+
+//Exercise 6-3
+document.write(childNodes(root).length+"<br>");
+
+</script>
+</head>
+<body>
+</body>
+</html>

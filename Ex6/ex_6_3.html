@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Exercise 6-3</title>
+<script>
+	var docs;
+	var docs2;
+
+	//1번
+	function loadXMLDoc() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				docs = xmlhttp.responseXML;
+				addBooks("book1", "JaeSeong", "2017", "600");
+				addBooks("book2", "yoonjin", "2017", "700");
+				addBooks("book3", "yoonjin", "2017", "800");
+				print();
+			}
+		}
+
+		xmlhttp.open("GET", "books.xml", true);
+		xmlhttp.send();
+	}
+	loadXMLDoc();
+
+	//책 추가하기
+	function addBooks(title, author, year, price) {
+
+		// 북 노드 생성
+		book = docs.createElement("book");
+		book.setAttribute("category", "diary");
+
+		// 타이틀 노드 생성
+		elem = docs.createElement("title");
+		text = docs.createTextNode(title);
+		elem.appendChild(text);
+		book.appendChild(elem);
+
+		// 저자 노드 생성
+		elem = docs.createElement("author");
+		text = docs.createTextNode(author);
+		elem.appendChild(text);
+		book.appendChild(elem);
+
+		// 년 생성
+		elem = docs.createElement("year");
+		text = docs.createTextNode(year);
+		elem.appendChild(text);
+		book.appendChild(elem);
+
+		// 가격 생성
+		elem = docs.createElement("price");
+		text = docs.createTextNode(price);
+		elem.appendChild(text);
+		book.appendChild(elem);
+
+		// 북스토어에 생성
+		x = docs.getElementsByTagName("bookstore")[0];
+		x.appendChild(book);
+	}
+
+	//표 출력
+	function print() {
+		node = docs.documentElement.childNodes[9];
+		document
+				.write("<table border = '1'><tr><th>title</th><th>author</th><th>year</th><th>price</th></tr>");
+		while (node != null) {
+			document.write("<tr>");
+			for (i = 0; i < node.childNodes.length; i++) {
+				newNode = node.childNodes[i];
+				if (newNode.nodeType == 1) {
+					document.write("<td>" + newNode.childNodes[0].nodeValue + "</td>");
+				}
+			}
+			document.write("</tr>");
+			node = node.nextSibling;
+		}
+	}
+
+	//문제 2
+	function loadXMLDoc2() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				docs2 = (xmlhttp.responseXML);
+				print2();
+			}
+		}
+
+		xmlhttp.open("GET", "cd_catalog.xml", true);
+		xmlhttp.send();
+	}
+
+	//출력 2
+	function print2() {
+		document
+				.write("<table border = '1'><tr><th>title</th><th>artist</th><th>price</th><th>year</th></tr>");
+		var years = docs2.getElementsByTagName("YEAR");
+		var prices = docs2.getElementsByTagName("PRICE");
+
+		for (i = 0; i < prices.length; i++) {
+			prices[i].childNodes[0].nodeValue = (parseInt(prices[i].childNodes[0].nodeValue) * 0.9).toString();
+		}
+
+		// 1995년도 이상 일경우 
+		for (i = 0; i < years.length; i++) {
+			if (parseInt(years[i].childNodes[0].nodeValue) < 1995) {
+				var node = years[i].parentNode;
+				document.write("<tr>");
+				for (j = 0; j < node.childNodes.length; j++) {
+					var cd = node.childNodes[j];
+					if (cd.nodeType == 1 && cd.tagName != "COMPANY" && cd.tagName != "COUNTRY") {
+						document.write("<td>" + cd.childNodes[0].nodeValue + "</td>");
+					}
+				}
+				document.write("</tr>");
+			}
+		}
+		document.write("</table>");
+	}
+	loadXMLDoc2();
+</script>
+</head>
+<body>
+</body>
+</html>
