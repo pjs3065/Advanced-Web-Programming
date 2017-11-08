@@ -6,12 +6,17 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="docs" key="selection"/>
+		<item value="param" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="param"/>
+			<item value="found"/>
+			<item value="visitorCookie"/>
+			<item value="known"/>
+			<item value="field"/>
 			<item value="docs"/>
 			<item value="docs2"/>
 			<item value="document"/>
@@ -22,13 +27,11 @@
 			<item value="body"/>
 			<item value="printBooks"/>
 			<item value="extend_prevSibling"/>
-			<item value="extend_nextSibling"/>
-			<item value="extend_lastChild"/>
-			<item value="extend"/>
-			<item value="extend_firstChild"/>
-			<item value="root"/>
 		</list>
 		<list key="replacehistory">
+			<item value="firstCookie"/>
+			<item value="newvisit"/>
+			<item value="index"/>
 			<item value="docs"/>
 			<item value="book_list_arr"/>
 			<item value="bookPrint"/>
@@ -44,7 +47,7 @@
 		<item value="342" key="DIALOG_WIDTH"/>
 		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
 		<item value="452" key="DIALOG_HEIGHT"/>
-		<item value="618" key="DIALOG_X_ORIGIN"/>
-		<item value="62" key="DIALOG_Y_ORIGIN"/>
+		<item value="1500" key="DIALOG_X_ORIGIN"/>
+		<item value="56" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
