@@ -36,7 +36,7 @@ public class ex10_6_1Servlet extends HttpServlet {
 		
 		if (request.getParameter("Email").equals("") && request.getParameter("Phonenumber").equals("")) {
 			out.println("<!DOCTYPE html>\n" + "<html>\n" + "<head><title>A Simple Servlet</title></head>\n"
-					+ "<body><H2>Registration</H2>\n" + "<FORM ACTION='http://localhost:9090/myServlet/Hello'>\n"
+					+ "<body><H2>Registration</H2>\n" + "<FORM ACTION='ex10_6_1Servlet'>\n"
 					+ "<p>First name: <INPUT TYPE='TEXT' NAME='firstName' VALUE = " + request.getParameter("firstName")
 					+ "></p>" + "<p>Last name: <INPUT TYPE='TEXT' NAME='lastName' VALUE = "
 					+ request.getParameter("lastName") + "></p>" + "<p>E-mail: <INPUT TYPE='TEXT' NAME='Email' VALUE = "
@@ -48,7 +48,7 @@ public class ex10_6_1Servlet extends HttpServlet {
 
 		else if (request.getParameter("Email").equals("")) {
 			out.println("<!DOCTYPE html>\n" + "<html>\n" + "<head><title>A Simple Servlet</title></head>\n"
-					+ "<body><H2>Registration</H2>\n" + "<FORM ACTION='http://localhost:9090/myServlet/Hello'>\n"
+					+ "<body><H2>Registration</H2>\n" + "<FORM ACTION='ex10_6_1Servlet'>\n"
 					+ "<p>First name: <INPUT TYPE='TEXT' NAME='firstName' VALUE = " + request.getParameter("firstName")
 					+ "></p>" + "<p>Last name: <INPUT TYPE='TEXT' NAME='lastName' VALUE = "
 					+ request.getParameter("lastName") + "></p>" + "<p>E-mail: <INPUT TYPE='TEXT' NAME='Email' VALUE = "
@@ -60,7 +60,7 @@ public class ex10_6_1Servlet extends HttpServlet {
 
 		else if (request.getParameter("Phonenumber").equals("")) {
 			out.println("<!DOCTYPE html>\n" + "<html>\n" + "<head><title>A Simple Servlet</title></head>\n"
-					+ "<body><H2>Registration</H2>\n" + "<FORM ACTION='http://localhost:9090/myServlet/Hello'>\n"
+					+ "<body><H2>Registration</H2>\n" + "<FORM ACTION='ex10_6_1Servlet'>\n"
 					+ "<p>First name: <INPUT TYPE='TEXT' NAME='firstName' VALUE = " + request.getParameter("firstName")
 					+ "></p>" + "<p>Last name: <INPUT TYPE='TEXT' NAME='lastName' VALUE = "
 					+ request.getParameter("lastName") + "></p>" + "<p>E-mail: <INPUT TYPE='TEXT' NAME='Email' VALUE = "
