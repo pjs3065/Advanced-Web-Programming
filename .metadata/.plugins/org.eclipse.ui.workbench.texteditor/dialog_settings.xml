@@ -6,12 +6,16 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="param" key="selection"/>
+		<item value="secondBrowser" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="secondBrowser == true"/>
+			<item value="if( secondBrowser == true)"/>
+			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=EUC-KR&quot;"/>
+			<item value="private"/>
 			<item value="param"/>
 			<item value="found"/>
 			<item value="visitorCookie"/>
@@ -23,12 +27,10 @@
 			<item value="xmlDoc"/>
 			<item value="xml"/>
 			<item value="count"/>
-			<item value="book_arr"/>
-			<item value="body"/>
-			<item value="printBooks"/>
-			<item value="extend_prevSibling"/>
 		</list>
 		<list key="replacehistory">
+			<item value="secondBrowser"/>
+			<item value=""/>
 			<item value="firstCookie"/>
 			<item value="newvisit"/>
 			<item value="index"/>
