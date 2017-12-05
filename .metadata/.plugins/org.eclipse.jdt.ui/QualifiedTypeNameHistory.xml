@@ -6,5 +6,12 @@
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
 <fullyQualifiedTypeName name="com.sun.javafx.collections.MappingChange.Map"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="org.apache.catalina.servlet4preview.RequestDispatcher"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="javax.servlet.jsp.tagext.SimpleTagSupport"/>
+<fullyQualifiedTypeName name="javax.servlet.jsp.tagext.SimpleTag"/>
+<fullyQualifiedTypeName name="javax.servlet.jsp.JspException"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="javax.servlet.jsp.JspWriter"/>
 </qualifiedTypeNameHistroy>

@@ -6,31 +6,25 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="secondBrowser" key="selection"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;"/>
+			<item value="http://localhost:9090/myServlet/Hello"/>
+			<item value="&lt;/p&gt;"/>
+			<item value="&lt;p&gt;"/>
 			<item value="secondBrowser == true"/>
 			<item value="if( secondBrowser == true)"/>
 			<item value="&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=EUC-KR&quot;"/>
 			<item value="private"/>
-			<item value="param"/>
-			<item value="found"/>
-			<item value="visitorCookie"/>
-			<item value="known"/>
-			<item value="field"/>
-			<item value="docs"/>
-			<item value="docs2"/>
-			<item value="document"/>
-			<item value="xmlDoc"/>
-			<item value="xml"/>
-			<item value="count"/>
 		</list>
 		<list key="replacehistory">
-			<item value="secondBrowser"/>
+			<item value="ex10_6_1Servlet"/>
 			<item value=""/>
+			<item value="secondBrowser"/>
 			<item value="firstCookie"/>
 			<item value="newvisit"/>
 			<item value="index"/>
