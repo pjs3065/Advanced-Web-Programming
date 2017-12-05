@@ -9,7 +9,17 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 		<property name="name" value="Jaeseong Park1" />
 	</bean>
 	<bean id="employee2" class="myPackage.Employee">
-		<constructor-arg value="20"/>
-		<constructor-arg value = "Jaeseong Park2"/>
+		<constructor-arg value="20" />
+		<constructor-arg value="Jaeseong Park2" />
+	</bean>
+	<bean id="car1" class="myPackage.CarFactory" factory-method="makeCar">
+		<constructor-arg value="Sonata" index = "0" />
+		<constructor-arg value="2010" index = "1" />
+		<constructor-arg value="Hyundai" index = "2" />
+	</bean>
+
+	<bean id="car2" class="myPackage.CarFactory" factory-method="makeCar">
+		<constructor-arg value="Sonata" index="0" />
+		<constructor-arg value="2010" index="1" />
 	</bean>
 </beans>
