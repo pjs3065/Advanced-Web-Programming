@@ -12,9 +12,8 @@ public class mainEmployee {
 		Employee employee2 = (Employee) context.getBean("employee2");
 		printInfo(employee2);
 	}
-	
-	public static void printInfo(Employee employee)
-	{
-		System.out.printf("ID : %d, Name : %s ",employee.getId(),employee.getName());
+
+	public static void printInfo(Employee employee) {
+		System.out.printf("ID : %d, Name : %s ", employee.getId(), employee.getName());
 	}
 }

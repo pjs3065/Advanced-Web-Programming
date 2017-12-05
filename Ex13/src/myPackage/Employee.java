@@ -27,9 +27,8 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public void printInfo()
-	{
+
+	public void printInfo() {
 		System.out.println("id : " + getId() + " name : " + getName());
 	}
 

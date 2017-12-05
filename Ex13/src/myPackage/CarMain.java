@@ -12,9 +12,8 @@ public class CarMain {
 		Car car2 = (Car) context.getBean("car2");
 		printInfo(car2);
 	}
-	
-	public static void printInfo(Car car)
-	{
+
+	public static void printInfo(Car car) {
 		car.printInfo();
 	}
 

@@ -13,9 +13,9 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 		<constructor-arg value="Jaeseong Park2" />
 	</bean>
 	<bean id="car1" class="myPackage.CarFactory" factory-method="makeCar">
-		<constructor-arg value="Sonata" index = "0" />
-		<constructor-arg value="2010" index = "1" />
-		<constructor-arg value="Hyundai" index = "2" />
+		<constructor-arg value="Sonata" index="0" />
+		<constructor-arg value="2010" index="1" />
+		<constructor-arg value="Hyundai" index="2" />
 	</bean>
 
 	<bean id="car2" class="myPackage.CarFactory" factory-method="makeCar">
