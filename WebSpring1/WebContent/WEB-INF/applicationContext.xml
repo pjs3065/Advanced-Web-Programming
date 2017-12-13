@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="customerLookupService" class="myPackage.MapCustomerLookupService">
+<property name="custDatabase">
+    <map>
+        <entry key="id001">
+        <bean class="myPackage.Customer">
+            <property name="customerID" value="id001"/>
+            <property name="name" value="Marty"/>
+      
+            <property name="balance" value="-3456.78"/>
+        </bean>
+        </entry>
+        <entry key="id002">
+        <bean class="myPackage.Customer">
+            <property name="customerID" value="id002"/>
+            <property name="name" value="Larry"/>
+            <property name="balance" value="1234.56"/>
+        </bean>
+        </entry>
+        <entry key="id003">
+        <bean class="myPackage.Customer">
+            <property name="customerID" value="id003"/>
+            <property name="name" value="James"/>
+
+            <property name="balance" value="987654.32"/>
+        </bean>
+        </entry>
+    </map>
+</property>
+</bean>
+</beans>
+
+
+
+        

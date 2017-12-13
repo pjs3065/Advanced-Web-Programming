@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="customerLookupService" class="myPackage.MapCustomerLookupService">
+<property name="custDatabase">
+    <map>
+        <entry key="a1234">
+        <bean class="myPackage.Customer">
+            <property name="customerID" value="a1234"/>
+            <property name="name" value="Rod Johnson"/>
+            <property name="balance" value="123.45"/>
+        </bean>
+        </entry>
+        <entry key="a1235">
+        <bean class="myPackage.Customer">
+            <property name="customerID" value="a1235"/>
+            <property name="name" value="Gary Mak"/>
+            <property name="balance" value="4567.89"/>
+        </bean>
+        </entry>
+        <entry key="a1236">
+        <bean class="myPackage.Customer">
+            <property name="customerID" value="a1236"/>
+            <property name="name" value="Craig Walls"/>
+            <property name="balance" value="78901.23"/>
+        </bean>
+        </entry>
+        <entry key="a1237">
+        <bean class="myPackage.Customer">
+            <property name="customerID" value="a1237"/>
+            <property name="name" value="Kyong Park"/>
+            <property name="balance" value="101112.13"/>
+        </bean>
+        </entry>
+    </map>
+</property>
+</bean>
+<bean id="colorPreferences" class="myPackage.ColorPreferences" 
+    scope="session">
+    <property name="foreground" value="black"/>
+    <property name="background" value="white"/>
+</bean>
+</beans>
+
+
+
+        
