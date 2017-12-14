@@ -20,7 +20,7 @@ private String model;
 	
 	
 	public void printInfo(){
-		System.out.println("--car--");
+		System.out.println("------car-----");
 		System.out.println("model : " + this.model);
 		System.out.println("year : " + this.year);
 		System.out.println("maker : " + this.maker);

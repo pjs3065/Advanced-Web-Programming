@@ -20,7 +20,6 @@ public class Employee {
 		this.cars = cars;
 	}
 	
-	
 	public int getId() {
 		return id;
 	}
@@ -33,7 +32,6 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 	
 	public List<Car> getCars() {
 		return cars;
